@@ -1,0 +1,14 @@
+[
+  {
+    "miniNaglowek": "Wydanie v1.0.1",
+    "naglowek": "Premiera serwisu BookotekaServer",
+    "opis": "Oficjalnie wydano wersję v1.0.1 aplikacji self-hosted BookotekaServer",
+    "pigulki": ["BookotekaServer"]
+  },
+  {
+    "miniNaglowek": "Wydanie v1.0.0",
+    "naglowek": "Premiera aplikacji bookoteka",
+    "opis": "Oficjalnie wydaliśmy pierwszą stabilną wersję desktopową zbudowaną w oparciu o Tauri i React.",
+    "pigulki": ["bookoteka"]
+  }
+]

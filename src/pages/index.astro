@@ -1,0 +1,179 @@
+---
+import Layout from '../layouts/Layout.astro';
+import aktualnosci from '../data/aktualnosci.json';
+---
+
+<Layout title="Bookoteka Apps">
+  <!-- Sekcja Hero -->
+  <section class="py-20 md:py-28 text-center max-w-4xl mx-auto px-6">
+    <span class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold text-amber-900 bg-amber-200/60 rounded-full border border-amber-300/50">
+      Open Source & Self-Hosted
+    </span>
+    
+    <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+      Nowoczesny ekosystem narzędzi dla czytelników
+    </h1>
+    
+    <p class="mt-6 text-lg md:text-xl text-slate-700 max-w-2xl mx-auto leading-relaxed">
+      Tworzymy szybkie, bezpłatne i dopracowane aplikacje do zarządzania domową biblioteką, śledzenia nawyków czytelniczych i integracji własnych serwerów.
+    </p>
+
+    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a 
+        href="/aplikacje" 
+        class="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-white font-semibold px-8 py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg text-center"
+      >
+        Odkryj aplikacje
+      </a>
+      <a 
+        href="https://github.com/bookoteka" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="w-full sm:w-auto bg-amber-100/80 hover:bg-amber-200/80 text-slate-900 font-semibold px-8 py-3.5 rounded-xl border border-amber-300/60 transition-all text-center"
+      >
+        Zobacz na GitHubie
+      </a>
+    </div>
+  </section>
+
+  <!-- Cechy -->
+  <section class="py-16 bg-amber-100/40 border-y border-amber-200/60">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white/80 p-8 rounded-2xl border border-amber-200/60 shadow-xs">
+        <div class="text-3xl mb-4">🚀</div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Szybkość i Lekkost</h3>
+        <p class="text-slate-600 leading-relaxed">
+          Narzędzia budowane z myślą o minimalnym zużyciu zasobów, natychmiastowym działaniu i braku zbędnego narzutu.
+        </p>
+      </div>
+
+      <div class="bg-white/80 p-8 rounded-2xl border border-amber-200/60 shadow-xs">
+        <div class="text-3xl mb-4">🔒</div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Prywatność i Kontrola</h3>
+        <p class="text-slate-600 leading-relaxed">
+          Twoja biblioteka i historia czytelnictwa należą do Ciebie. Wspieramy tryb offline oraz własne serwery self-hosted.
+        </p>
+      </div>
+
+      <div class="bg-white/80 p-8 rounded-2xl border border-amber-200/60 shadow-xs">
+        <div class="text-3xl mb-4">🪙</div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Otwarty dostęp</h3>
+        <p class="text-slate-600 leading-relaxed">
+          Wszystkie aplikacje wchodzące w skład ekosystemu są całkowicie darmowe i rozwijane z myślą o społeczności.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wyróżnione projekty -->
+  <section class="py-20 max-w-6xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <div>
+        <h2 class="text-3xl font-bold text-slate-900">Wyróżnione projekty</h2>
+        <p class="text-slate-600 mt-2">Główne filary ekosystemu Bookoteka Apps</p>
+      </div>
+      <a href="/aplikacje" class="mt-4 md:mt-0 font-semibold text-slate-900 hover:underline flex items-center gap-1">
+        Wszystkie aplikacje &rarr;
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-white/90 p-8 rounded-2xl border border-amber-200/60 shadow-xs flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-2xl">📚</span>
+            <h3 class="text-2xl font-bold text-slate-900">bookoteka</h3>
+          </div>
+          <p class="text-slate-600 mb-6 leading-relaxed">
+            Pulpitowa aplikacja czytelnicza do zarządzania osobistą biblioteką, katalogowania książek i śledzenia postępów w czytaniu.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-8">
+            <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-md">Tauri</span>
+            <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-md">React</span>
+            <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-md">TypeScript</span>
+          </div>
+        </div>
+        <a href="/aplikacje" class="inline-block font-semibold text-slate-900 hover:text-amber-700 transition-colors">
+          Dowiedz się więcej &rarr;
+        </a>
+      </div>
+
+      <div class="bg-white/90 p-8 rounded-2xl border border-amber-200/60 shadow-xs flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-2xl">🖥️</span>
+            <h3 class="text-2xl font-bold text-slate-900">BookotekaServer</h3>
+          </div>
+          <p class="text-slate-600 mb-6 leading-relaxed">
+            Self-hosted serwer webowy pozwalający na synchronizację danych, zdalny dostęp do biblioteki oraz eksport raportów czytelniczych.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-8">
+            <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-md">Ruby on Rails</span>
+            <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-md">Stimulus</span>
+            <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-md">Tailwind CSS</span>
+          </div>
+        </div>
+        <a href="/aplikacje" class="inline-block font-semibold text-slate-900 hover:text-amber-700 transition-colors">
+          Dowiedz się więcej &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aktualności -->
+  <section class="py-16 bg-amber-100/30 border-y border-amber-200/50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+        <div>
+          <h2 class="text-3xl font-bold text-slate-900">Aktualności & Wydania</h2>
+          <p class="text-slate-600 mt-2">Najnowsze informacje ze świata Bookoteka Apps</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {aktualnosci.map((wpis) => (
+          <article class="bg-white/90 p-6 rounded-2xl border border-amber-200/60 shadow-xs flex flex-col justify-between">
+            <div>
+              {wpis.miniNaglowek && (
+                <div class="flex items-center justify-between text-xs font-semibold text-slate-500 mb-3">
+                  <span>{wpis.miniNaglowek}</span>
+                </div>
+              )}
+              <h3 class="text-lg font-bold text-slate-900 mb-2">{wpis.naglowek}</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                {wpis.opis}
+              </p>
+            </div>
+            {wpis.pigulki && wpis.pigulki.length > 0 && (
+              <div class="flex flex-wrap gap-2">
+                {wpis.pigulki.map((pig) => (
+                  <span class="inline-block text-xs font-semibold text-amber-800 bg-amber-100 px-2.5 py-1 rounded-md w-fit">
+                    {pig}
+                  </span>
+                ))}
+              </div>
+            )}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Poznaj historię -->
+  <section class="py-20 max-w-6xl mx-auto px-6">
+    <div class="bg-amber-100/60 border border-amber-200/80 p-8 md:p-12 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-8">
+      <div class="max-w-xl">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Poznaj historię projektu</h2>
+        <p class="text-slate-700 mt-3 leading-relaxed">
+          Chcesz dowiedzieć się, dlaczego zdecydowaliśmy się zbudować własny ekosystem narzędzi i jakie cele stawiamy sobie na przyszłość?
+        </p>
+      </div>
+      <a 
+        href="/o-nas" 
+        class="shrink-0 bg-slate-900 hover:bg-slate-800 text-white font-semibold px-6 py-3 rounded-xl transition-all shadow-xs"
+      >
+        O nas
+      </a>
+    </div>
+  </section>
+</Layout>
