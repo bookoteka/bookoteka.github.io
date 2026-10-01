@@ -1,0 +1,42 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import KafelekAplikacja from '../../components/KafelekAplikacja.astro';
+---
+
+<Layout title="Aplikacje | Bookoteka Apps">
+  <!-- Sekcja nagłówkowa -->
+  <section class="py-16 md:py-24 text-center max-w-4xl mx-auto px-6">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
+      Aplikacje i Narzędzia
+    </h1>
+    <p class="mt-4 text-lg text-slate-700 max-w-2xl mx-auto leading-relaxed">
+      Przeglądaj pełny ekosystem bezpłatnych, otwartych narzędzi stworzonych do zarządzania biblioteczką i śledzenia postępów w czytaniu.
+    </p>
+  </section>
+
+  <!-- Kontener na kafelki aplikacji -->
+  <section class="pb-24 max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      <!-- Kafelek: bookoteka -->
+      <KafelekAplikacja
+        nazwa='bookoteka'
+        wersja='Stabilna v1.0.0'
+        opis='Pulpitowa aplikacja czytelnicza do zarządzania osobistą biblioteką, katalogowania książek oraz śledzenia postępów w czytaniu w trybie offline.'
+        pigulki={['Tauri', 'React', 'Typescript']}
+        linkGH='https://github.com/bookoteka/bookoteka'
+        rout='bookoteka'
+      />
+
+      <!-- Kafelek: BookotekaServer -->
+      <KafelekAplikacja
+        nazwa='BookotekaServer'
+        wersja='Stabilna v1.0.1'
+        opis='bookoteka w wersji na serwery homelab i self-hosting'
+        pigulki={['Ruby on Rails', 'Tailwind CSS', 'Docker']}
+        linkGH='https://github.com/bookoteka/bookotekaserver'
+        rout='bookotekaserver'
+      />
+    </div>
+  </section>
+</Layout>

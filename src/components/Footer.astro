@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/bookotekaapps.png';
+---
+
+<footer class="bg-amber-100/50 border-t border-amber-200/60 py-12 mt-auto">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="flex items-center gap-3">
+      <Image src={logo} alt='Logo Bookoteka Apps' class="h-18 w-auto"/>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-6 text-sm font-medium text-slate-700">
+      <a href="/" class="hover:text-slate-900 transition-colors">Strona główna</a>
+      <a href="/aplikacje" class="hover:text-slate-900 transition-colors">Aplikacje</a>
+      <a href="/o-nas" class="hover:text-slate-900 transition-colors">O nas</a>
+      <a href="/kontakt" class="hover:text-slate-900 transition-colors">Kontakt</a>
+      <a 
+        href="https://github.com/bookoteka" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="hover:text-slate-900 transition-colors"
+      >
+        GitHub
+      </a>
+    </div>
+
+    <p class="text-xs text-slate-500">
+      &copy; {new Date().getFullYear()} Bookoteka Apps
+    </p>
+  </div>
+</footer>

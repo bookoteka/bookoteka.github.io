@@ -1,0 +1,140 @@
+---
+interface Props {
+  kod?: string;
+}
+
+const { kod } = Astro.props;
+const trescKodu = kod || (await Astro.slots.render('default')) || '';
+---
+
+<div class="kontener-pola-kodu">
+  <pre><code class="tresc-pola">{trescKodu}</code></pre>
+  <button class="guzik-kopiuj-pola-kodu" type="button" aria-label="Kopiuj kod">
+    <svg class="ikona-kopiuj" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+    </svg>
+    <svg class="ikona-ptaszek ukryta" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+  </button>
+</div>
+
+<script>
+  document.querySelectorAll('.guzik-kopiuj-pola-kodu').forEach((guzik) => {
+    guzik.addEventListener('click', async () => {
+      const kontener = guzik.closest('.kontener-pola-kodu');
+      const kodDoSkopiowania = kontener?.querySelector('.tresc-pola')?.textContent || '';
+      
+      await navigator.clipboard.writeText(kodDoSkopiowania);
+
+      const ikonaKopiuj = guzik.querySelector('.ikona-kopiuj');
+      const ikonaPtaszek = guzik.querySelector('.ikona-ptaszek');
+
+      if (ikonaKopiuj && ikonaPtaszek) {
+        ikonaKopiuj.classList.add('ukryta');
+        ikonaPtaszek.classList.remove('ukryta');
+        ikonaPtaszek.classList.add('efekt-skopiowano');
+
+        setTimeout(() => {
+          ikonaKopiuj.classList.remove('ukryta');
+          ikonaPtaszek.classList.add('ukryta');
+          ikonaPtaszek.classList.remove('efekt-skopiowano');
+        }, 1500);
+      }
+    });
+  });
+</script>
+
+<style>
+  :root {
+    --wymiary-kopiuj: 2.1rem;
+  }
+
+  .kontener-pola-kodu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .kontener-pola-kodu pre {
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tresc-pola {
+    display: block;
+    background-color: rgb(50, 48, 48);
+    color: rgb(0, 216, 0);
+    padding: 0.4rem 0.6rem;
+    font-size: 0.95rem;
+    border-radius: 0.5rem;
+    white-space: pre;
+    width: max-content;
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .guzik-kopiuj-pola-kodu {
+    width: var(--wymiary-kopiuj);
+    height: var(--wymiary-kopiuj);
+    border: 0.2rem solid rgb(180, 83, 9);
+    border-radius: 26%;
+    background-color: rgb(251, 191, 36);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: transform 0.15s ease-in-out, background-color 0.2s ease;
+    color: rgb(69, 26, 3);
+  }
+
+  .guzik-kopiuj-pola-kodu:hover {
+    transform: scale(1.05);
+    background-color: rgb(245, 158, 11);
+  }
+
+  .guzik-kopiuj-pola-kodu:active {
+    transform: scale(0.95);
+  }
+
+  .ukryta {
+    display: none !important;
+  }
+
+  @keyframes animacja-skopiowania {
+    0% {
+      transform: scale(1) rotate(0deg);
+    }
+    50% {
+      transform: scale(1.25) rotate(12deg);
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+    }
+  }
+
+  .efekt-skopiowano {
+    animation: animacja-skopiowania 0.3s ease-in-out;
+  }
+
+  @media (max-width: 768px) {
+    :root {
+      --wymiary-kopiuj: 1.8rem;
+    }
+
+    .tresc-pola {
+      font-size: 0.85rem;
+      padding: 0.35rem 0.5rem;
+    }
+  }
+</style>
