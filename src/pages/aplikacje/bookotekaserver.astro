@@ -1,0 +1,159 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import logo from '../../assets/bookotekaserver.png';
+import { Image } from 'astro:assets';
+import SeparatorNiewidzialny from '../../components/SeparatorNiewidzialny.astro';
+import PoleKodu from '../../components/PoleKodu.astro';
+---
+
+<Layout title="Bookoteka Server - bookoteka w Twoim homelabie | Bookoteka Apps">
+  <section class="py-12 md:py-16 max-w-5xl mx-auto px-6">
+    <div class="flex flex-col sm:flex-row items-start gap-6 md:gap-8 mb-12">
+      <Image
+        src={logo}
+        alt="BookotekaServer logo"
+        width={160}
+        height={160}
+        class="w-32 h-32 md:w-40 md:h-40 shrink-0 object-contain rounded-2xl shadow-sm"
+      />
+      <div class="flex flex-col gap-4">
+        <div>
+          <div class="flex flex-wrap items-center gap-3 mb-2">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight">BookotekaServer</h1>
+            <span class="px-3 py-1 text-xs font-semibold text-emerald-800 bg-emerald-100 rounded-full">
+              v1.0.1
+            </span>
+          </div>
+          <p class="text-lg text-slate-700 leading-relaxed">
+            Samodzielnie hostowana wersja bookoteki do zarządzania biblioteką, śledzenia postępów w czytaniu i generowania raportów.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <a
+            href="#instalacja"
+            class="bg-slate-900 hover:bg-slate-800 text-white font-semibold px-5 py-2.5 rounded-xl transition-all shadow-md text-sm text-center"
+          >
+            Zainstaluj na swoim serwerze
+          </a>
+          <a
+            href="https://github.com/bookoteka/bookotekaserver"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-amber-100/80 hover:bg-amber-200/80 text-slate-900 font-semibold px-5 py-2.5 rounded-xl border border-amber-300/60 transition-all text-sm text-center"
+          >
+            Kod źródłowy na GitHubie
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <SeparatorNiewidzialny height="1.5" />
+
+    <div class="mb-16">
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Możliwości aplikacji</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white/80 p-6 rounded-2xl border border-amber-200/60 shadow-xs">
+          <div class="text-2xl mb-3">📚</div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Biblioteka dostępna wszędzie</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Uruchom własną instancję w domowej sieci lub na serwerze i korzystaj z biblioteki z dowolnego urządzenia.
+          </p>
+        </div>
+
+        <div class="bg-white/80 p-6 rounded-2xl border border-amber-200/60 shadow-xs">
+          <div class="text-2xl mb-3">📈</div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Postępy i oceny</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Śledź przeczytane książki, postępy w czytaniu oraz własne oceny w jednym, przejrzystym miejscu.
+          </p>
+        </div>
+
+        <div class="bg-white/80 p-6 rounded-2xl border border-amber-200/60 shadow-xs">
+          <div class="text-2xl mb-3">📄</div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Raporty PDF</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Generuj automatyczne podsumowania swojej aktywności czytelniczej za wybrany miesiąc lub rok.
+          </p>
+        </div>
+
+        <div class="bg-white/80 p-6 rounded-2xl border border-amber-200/60 shadow-xs">
+          <div class="text-2xl mb-3">🐳</div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Gotowa na homelab</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Jedna konfiguracja Docker Compose wystarczy, aby uruchomić lekką aplikację na własnym serwerze.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <SeparatorNiewidzialny height="1.5" />
+
+    <div class="bg-amber-100/40 p-8 rounded-2xl border border-amber-200/60 mb-16">
+      <h2 class="text-xl font-bold text-slate-900 mb-4">Stos technologiczny</h2>
+      <div class="flex flex-wrap gap-2">
+        {['Ruby on Rails', 'Tailwind CSS', 'Stimulus', 'Docker', 'SQLite'].map((technologia) => (
+          <span class="px-3 py-1 bg-white text-slate-800 text-xs font-semibold rounded-md border border-amber-200/60">
+            {technologia}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <SeparatorNiewidzialny height="1.5" />
+
+    <div class="mb-16" id="instalacja">
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8">Instalacja</h2>
+
+      <div class="flex flex-col gap-8">
+        <div class="bg-white/80 p-6 md:p-8 rounded-2xl border border-amber-200/60 shadow-xs">
+          <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+            🐳 Docker Compose
+          </h3>
+          <p class="text-lg text-slate-700 leading-relaxed mb-4">
+            Przed rozpoczęciem upewnij się, że na serwerze są zainstalowane Docker i Docker Compose.
+            Następnie pobierz gotowy plik konfiguracyjny z repozytorium:
+          </p>
+          <p class="text-slate-700 mb-3">
+            <a
+              href="https://github.com/bookoteka/bookotekaserver/blob/main/compose/docker-compose.yml"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-amber-800 underline hover:text-amber-900 font-medium"
+            >
+              Otwórz docker-compose.yml na GitHubie
+            </a>
+          </p>
+          <ol class="list-decimal list-inside space-y-3 text-lg text-slate-700">
+            <li>Umieść plik <code class="bg-amber-100/60 px-1.5 py-0.5 rounded border border-amber-200/80 text-sm font-mono">docker-compose.yml</code> w wybranym katalogu.</li>
+            <li>Uzupełnij w nim zmienną <code class="bg-amber-100/60 px-1.5 py-0.5 rounded border border-amber-200/80 text-sm font-mono">RAILS_MASTER_KEY</code>.</li>
+            <li>Uruchom kontener w tle:</li>
+          </ol>
+          <div class="mt-3">
+            <PoleKodu>docker compose up -d</PoleKodu>
+          </div>
+        </div>
+
+        <div class="bg-white/80 p-6 md:p-8 rounded-2xl border border-amber-200/60 shadow-xs">
+          <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+            💾 Trwałość danych
+          </h3>
+          <p class="text-lg text-slate-700 leading-relaxed">
+            Dane aplikacji są przechowywane w nazwanym wolumenie Dockera przypisanym do katalogu&nbsp;
+            <code class="bg-amber-100/60 px-1.5 py-0.5 rounded border border-amber-200/80 text-sm font-mono">/rails/storage</code>.
+            Baza SQLite i wygenerowane raporty pozostają bezpieczne podczas aktualizacji obrazu oraz restartów kontenera.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-slate-900 text-white p-6 md:p-8 rounded-2xl mb-4">
+      <h2 class="text-xl font-bold mb-3">Masz już bookotekę?</h2>
+      <p class="leading-relaxed">
+        BookotekaServer jest serwerowym odpowiednikiem desktopowej aplikacji&nbsp;
+        <a href="/aplikacje/bookoteka" class="text-amber-300 underline hover:text-amber-200">bookoteka</a>.
+        Wybierz rozwiązanie, które najlepiej pasuje do Twojego sposobu korzystania z biblioteki.
+      </p>
+    </div>
+  </section>
+</Layout>
