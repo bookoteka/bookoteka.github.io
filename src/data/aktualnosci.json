@@ -1,5 +1,11 @@
 [
   {
+    "miniNaglowek": "Strona",
+    "naglowek": "Strona Bookoteka Apps",
+    "opis": "Opublikowaliśmy oficjalną stronę Bookoteka Apps!",
+    "pigulki": ["Strona", "Dla was", "Info"]
+  },
+  {
     "miniNaglowek": "Wydanie v1.0.1",
     "naglowek": "bookoteka v1.0.1",
     "opis": "Wydaliśmy wersję v1.0.1 bookoteki z łatką raportów",
