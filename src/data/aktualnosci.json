@@ -1,5 +1,11 @@
 [
   {
+    "miniNaglowek": "blue",
+    "naglowek": "Start bookoteki blue!",
+    "opis": "Rozpoczęliśmy prace nad aplikacją bookoteka blue - rozszerzonej wersji apki bookoteka",
+    "pigulki": ["blue", "bookotekablue", "nowość"]
+  },
+  {
     "miniNaglowek": "Strona",
     "naglowek": "Strona Bookoteka Apps",
     "opis": "Opublikowaliśmy oficjalną stronę Bookoteka Apps!",
