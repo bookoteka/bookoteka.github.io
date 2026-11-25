@@ -1,5 +1,11 @@
 [
   {
+    "miniNaglowek":"Wydanie v1.0.2",
+    "naglowek": "bookoteka v1.0.2",
+    "opis": "Wypuściliśmy poprawkę wizualną raportu miesięcznego",
+    "pigulki": ["bookoteka"]
+  },
+  {
     "miniNaglowek": "blue",
     "naglowek": "Start bookoteki blue!",
     "opis": "Rozpoczęliśmy prace nad aplikacją bookoteka blue - rozszerzonej wersji apki bookoteka",
